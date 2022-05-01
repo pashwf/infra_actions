@@ -57,6 +57,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script:
-          sudo docker pull pashwf/infra_actions
+          sudo docker pull pashwf/infra_actions:latest
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 pashwf/infra_actions 
